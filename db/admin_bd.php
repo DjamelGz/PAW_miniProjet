@@ -1,17 +1,6 @@
 <?php
 // Database connection
-$servername = "localhost";
-$username = "root"; // Replace with your database username
-$password = "sami12345"; // Replace with your database password
-$dbname = "paw";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+include("db.php");
 // Function to fetch submissions from the database
 function fetchSubmissions()
 {

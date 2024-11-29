@@ -7,19 +7,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Database configuration
-$host = 'localhost';
-$dbname = 'paw';
-$username = 'root';
-$password = 'sami12345'; // Replace with your actual database password
-
-// Connect to the database
-$conn = new mysqli($host, $username, $password, $dbname);
-
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+include("db.php");
 // Check if the request method is POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['login_admin'])) {

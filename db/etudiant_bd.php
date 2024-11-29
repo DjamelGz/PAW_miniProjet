@@ -1,20 +1,7 @@
 <?php
 // Function to fetch student requests from the database
 function fetchStudentRequests($student_matricule) {
-    // Database connection details
-    $host = 'localhost';
-    $dbname = 'paw';
-    $username = 'root';
-    $password = 'sami12345'; // Replace with your actual database password
-
-    // Create a new connection to the database
-    $conn = new mysqli($host, $username, $password, $dbname);
-
-    // Check if the connection was successful
-    if ($conn->connect_error) {
-        die("Database connection failed: " . $conn->connect_error);
-    }
-
+    include("db.php");
     // Prepare the SQL query to fetch the student requests
     $query = $conn->prepare("SELECT filename, filetype, status, date_de_Depot FROM documents WHERE id_etud = ?");
     if (!$query) {
